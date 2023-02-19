@@ -2,18 +2,38 @@ body
 {
     margin: 0;
     padding: 0;
-    background-image: url(../img/bgimg.jpg);
     background-repeat: no-repeat;
+    background: url(../images/background1.jpg);
+    background-size: cover;
+}
+
+h2{
+    color: white;
+}
+
+input::-webkit-input-placeholder{
+    color: aqua;
+}
+
+.ps{
+    margin-top: 20px;
+    color:white
+}
+
+.icon{
+    width: 221px;
+    height: 57px;
+    margin:40px auto;
 }
 
 #bigBox
 {
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 100px;
     padding: 20px 50px;
     background-color: #00000680;
     width: 400px;
-    height: 300px;
+    height: 500px;
     border-radius: 10px;
     text-align: center;
     background-position: 100px 100px;
@@ -51,10 +71,9 @@ body
     color: white;
     border: 0;
     border-radius: 20px;
-    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbbb 0%, #b465b4 0% );
+    background-color: #b465b4;
 }
 
-body{
-    background: url(../images/background1.jpg);
-    background-size: cover;
+#bigBox .loginButton:hover{
+    background-color: rgb(32, 9, 68);
 }
