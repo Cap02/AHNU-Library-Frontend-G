@@ -8,40 +8,61 @@
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/icofont.css" />
-        <title>座位预约</title>
-    </head>
-    <body>
-        <div class="icon">
-            <img src="./images/图标.png" alt="">
-        </div>
-        <div id="bigBox">
-            <h1>座位自动预约系统</h1>
-            <h2>安师大图书馆</h2>
-            <div class="inputBox">
-                <div class="inputText">
-                    <span class="iconfont icon-nickname"></span>
-                    <input type="text" placeholder="请输入学号" />
-                </div>
-                <div class="inputText">
-                    <span class="iconfont icon-visible"></span>
-                    <input type="password" placeholder="请输入密码" />
-                </div>
-                <div class="inputText">
-                    <span class="iconfont icon-visible"></span>
-                    <input type="text" placeholder="请输入要预约的座位号" />
-                </div>
-            </div>
-            <input class="loginButton" type="button" value="设置定时抢" />
-            <div></div>
-            <input class="loginButton" type="button" value="取消定时抢" />
 
-            <div class="ps">
-                ps：系统将在每天凌晨2点自动为你抢座位
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/icofont.css" />
+    <title>座位预约——安师大图书馆</title>
+    <link rel="stylesheet" href="./Store/bootstrap/css/bootstrap.css">
+    <script src="./Store/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div class="icon">
+        <img src="./images/图标.png" alt="">
+    </div>
+    <div id="bigBox">
+        <h1>座位自动预约系统</h1>
+        <h2>安师大图书馆</h2>
+        <div class="inputBox">
+            <div class="inputText">
+                <span class="iconfont icon-nickname"></span>
+                <input type="text" placeholder="请输入学号" />
+            </div>
+            <div class="inputText">
+                <span class="iconfont icon-visible"></span>
+                <input type="password" placeholder="请输入密码" />
+            </div>
+            <div class="inputText">
+                <span class="iconfont icon-visible"></span>
+                <input type="text" placeholder="请输入要预约的座位号" />
+            </div>
+            <div class="inputText">
+                <span class="iconfont icon-visible"></span>
+                <input type="text" placeholder="邀请码" />
             </div>
         </div>
-    </body>
+
+        <input class="loginButton" type="button" value="立即抢" />
+        <div></div>
+        <input class="loginButton" type="button" value="设置定时抢" />
+        <div></div>
+        <input class="loginButton" type="button" value="取消定时抢" />
+
+    </div>
+
+    <div class="ps">
+        ps：系统将在每天凌晨2点自动为你抢座位
+    </div>
+    </div>
+
+
+
+
+
+</body>
+
 </html>
