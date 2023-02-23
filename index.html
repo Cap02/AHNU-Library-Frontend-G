@@ -12,15 +12,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/icofont.css" />
     <title>座位预约——安师大图书馆</title>
+    <script src="./js/jquery.js"></script>
     <link rel="stylesheet" href="./Store/bootstrap/css/bootstrap.css">
     <script src="./Store/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./js/jquery.js"></script>
     <script src="./js/index.js"></script>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" >
 </head>
 
 <body>
+
     <div class="icon">
         <img src="./images/图标.png" alt="">
     </div>
@@ -30,38 +31,80 @@
         <div class="inputBox">
             <div class="inputText">
                 <span class="iconfont icon-nickname"></span>
-                <input type="text" placeholder="请输入学号" />
+                <input type="text" id="studentId" placeholder="请输入学号" />
             </div>
             <div class="inputText">
                 <span class="iconfont icon-visible"></span>
-                <input type="password" placeholder="请输入密码" />
+                <input type="password" id="password" placeholder="请输入密码" />
             </div>
             <div class="inputText">
                 <span class="iconfont icon-visible"></span>
-                <input type="text" placeholder="请输入要预约的座位号" />
+                <input type="text" id="seatId" placeholder="请输入要预约的座位号" />
             </div>
             <div class="inputText">
                 <span class="iconfont icon-visible"></span>
-                <input type="text" placeholder="邀请码" />
+                <input type="text" id="agreeId" placeholder="邀请码" />
             </div>
         </div>
 
-        <input class="loginButton" type="button" value="立即抢" />
+        <input class="loginButton immediateReserve" type="button" value="立即抢" />
         <div></div>
-        <input class="loginButton" type="button" value="设置定时抢" />
+        <input class="loginButton timeReserve" type="button" value="设置定时抢" />
         <div></div>
-        <input class="loginButton" type="button" value="取消定时抢" />
+        <input class="loginButton cancelTimeReserve" type="button" value="取消定时抢" />
 
     </div>
 
     <div class="ps">
-        ps：系统将在每天凌晨2点自动为你抢座位
+        ps：系统将在每天凌晨2点自动为你抢当天座位
     </div>
     </div>
 
+    <script>
+        let studentId = $("#studentId");
+        let password = $("#password")
+        let seatId = $("#seatId")
+        let agreeId = $("#agreeId")
+
+        let studentIdValue, passwordValue, seatIdValue, agreeIdValue;
+
+        let immediateReserve = $(".immediateReserve")
+        let timeReserve = $(".timeReserve")
+        let cancelTimeReserve = $(".cancelTimeReserve");
+
+        immediateReserve.click(function () {
+            if (0) {
+                alert("学号，密码，座位号，邀请码 都不能为空")
+                return;
+            } else {
+                studentIdValue = studentId[0].value;
+                passwordValue = password[0].value;
+                seatIdValue = seatId[0].value;
+                agreeIdValue = agreeId[0].value;
+
+                console.log(studentIdValue, passwordValue, seatIdValue, agreeIdValue);
+
+                let postData={};
+                postData['account']=studentIdValue
+                postData['password']=passwordValue
+                postData['sid']=seatIdValue
 
 
-
+                $.ajax({
+                    type: "POST",
+                    url: "http://127.0.0.1:5002/test",
+                    data: postData,
+                    success: function (res) {
+                        console.log('111');
+                        console.log("结果：", res);
+                    },
+                    error: function (xhr) {
+                        console.log("xhr：", xhr);
+                    },
+                })
+            }
+        });
+    </script>
 
 </body>
 

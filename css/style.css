@@ -3,7 +3,7 @@ body
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
-    background: url(../images/background1.jpg);
+    background: url(../images/background.jpg);
     background-size: cover;
 }
 
@@ -16,8 +16,10 @@ input::-webkit-input-placeholder{
 }
 
 .ps{
-    margin-top: 20px;
-    color:white
+    width: 100%;
+    text-align: center;
+    color:rgb(86, 37, 37);
+    font-size: large;
 }
 
 .icon{
